@@ -1,0 +1,12 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Entornos
+.env
+.env.*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
