@@ -1,5 +1,5 @@
 # 📌 Proyecto NoSQL – App de Hábitos y Rutina Diaria  
-**Equipo 2 – Ficha NoSQL / SENA – Sprint 1**
+**Srum 2 – Competencia NoSQL /**
 
 ---
 
@@ -55,3 +55,53 @@ Este Sprint se centró en **habilitar todo el entorno del proyecto** para comenz
 - Variables de entorno configuradas mediante `.env` y `dotenv`.  
 - Prueba de conexión **exitosa**:
 
+
+### ✔ 4.3 Inicialización y configuración del servidor Express  
+- Servidor creado en `server.js`
+- Middleware configurado:  
+  - `express.json()`  
+  - `cors()`  
+- Ruta de prueba funcionando:  
+  - `GET / → { mensaje: "API Hábitos – Sprint 1 OK" }`
+
+### ✔ 4.4 Repositorio GitHub completamente operativo  
+- URL: https://github.com/xmiguelxangelx/proyecto-nosql-equipo2  
+- Ramas organizadas (main + futuras feature branches).  
+- README en progreso.  
+- Issues del equipo creados.
+
+### ✔ 4.5 Historias de Usuario creadas en GitHub  
+HU realizadas en el repo:
+- HU-001: Registrar usuario  
+- HU-002: Registrar hábito  
+- HU-003: Registro de cumplimiento diario  
+- HU-004: Ver resumen semanal  
+- HU-005: Editar/Eliminar hábitos  
+
+Toda HU contiene:
+- Descripción  
+- Criterios de aceptación  
+- Escenarios  
+- Estimación  
+- Responsable  
+
+---
+
+## 📚 5. Tecnologías utilizadas
+- **Node.js**  
+- **Express**  
+- **MongoDB + Mongoose**  
+- **JavaScript (ES6)**  
+- **dotenv**  
+- **Git & GitHub**  
+- **VS Code**  
+- **Postman (testing)**
+
+---
+
+## 🛠️ 6. Instalación y configuración
+
+### 6.1 Clonar repositorio  
+```bash
+git clone https://github.com/xmiguelxangelx/proyecto-nosql-equipo2.git
+cd proyecto-nosql-equipo2
