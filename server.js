@@ -3,6 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+// 👉 IMPORTAR LAS RUTAS DE HÁBITOS
+const habitosRoutes = require('./src/routes/habitos');
+
 const app = express();
 
 // Middlewares
@@ -22,7 +25,10 @@ app.get('/', (req, res) => {
   res.json({ ok: true, mensaje: 'API Hábitos & Tareas funcionando' });
 });
 
-// Puerto
+// 👉 USAR LAS RUTAS CON EL PREFIJO /api/habitos
+app.use('/api/habitos', habitosRoutes);
+
+// Puerto (SOLO AQUÍ)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
