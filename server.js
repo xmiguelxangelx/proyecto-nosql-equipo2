@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -11,6 +12,9 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+// 👉 NUEVO: servir la carpeta "public"
+app.use(express.static('public'));
 
 // Conexión a MongoDB
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/tracker_habitos';
