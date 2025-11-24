@@ -1,304 +1,115 @@
-📝 1. Descripción del Proyecto
+# 📌 Proyecto NoSQL – App de Hábitos y Rutina Diaria  
+**Scrum – Sprint 1 y Sprint 2**
 
-La App de Hábitos y Rutina Diaria es una aplicación web desarrollada con Node.js + Express + MongoDB, cuyo objetivo es permitir a los usuarios registrar sus hábitos, hacer seguimiento diario y visualizar un progreso general.
+---
 
-El proyecto se desarrolla bajo la metodología Scrum, aplicando buenas prácticas de trabajo colaborativo, gestión de versiones y construcción iterativa por Sprints.
+## 📝 1. Descripción del Proyecto  
+La **App de Hábitos y Rutina Diaria** es una aplicación creada con **Node.js, Express y MongoDB**, que permite registrar hábitos, filtrarlos y administrarlos mediante una interfaz web sencilla.  
+El proyecto se desarrolla bajo **metodología Scrum**, dividido por roles y entregables por Sprint.
 
-🎯 2. Objetivo del Proyecto
+---
 
-Como usuario, quiero registrar mis hábitos y hacer seguimiento de mi progreso, para mejorar mi disciplina personal y tener una rutina más organizada.
+## 👥 2. Equipo de Trabajo
 
-👥 3. Equipo de Trabajo y Roles
-🧩 Product Owner – Miguel Ángel González
+### 🧩 Product Owner – Miguel Ángel González  
+- Define visión del producto.  
+- Prioriza el backlog.  
+- Valida historias de usuario y entregables.
 
-Define la visión del producto.
+### 🔧 Scrum Master / DevOps – Steven Borda  
+- Facilita el marco Scrum.  
+- Gestiona ramas, PR y estructura del repositorio.  
+- Configura entorno (Node, .env, MongoDB).
 
-Prioriza el Product Backlog.
+### 💻 Desarrollador Backend – Miguel Ángel González  
+- Construcción de la API REST.  
+- Modelos, controladores y rutas.  
+- Lógica CRUD, filtros y paginación.
 
-Aprueba HU y entregables.
+### 🎨 Frontend / Tester – Zharit Feo  
+- Validación visual y funcional de la interfaz.  
+- Pruebas de endpoints y reporte de errores.
 
-Supervisa que la solución cumpla los objetivos del usuario final.
+---
 
-🔧 Scrum Master / DevOps – Steven Borda
+# 🚀 3. Sprint 1 – Logros Principales
 
-Facilita la metodología Scrum.
+### ✔ 3.1 Conexión a MongoDB  
+Se integró Mongoose y variables de entorno.  
+**Evidencia:**  
+![Conexión MongoDB](./capturas/mongo-conexion.png)
 
-Remueve impedimentos técnicos del equipo.
+### ✔ 3.2 Estructura base del servidor  
+- Configuración de Express  
+- Middleware `cors` y `express.json()`  
+- Ruta de prueba funcionando
 
-Gestiona el flujo de trabajo en Git (ramas, merges, PR).
+### ✔ 3.3 Repositorio GitHub operativo  
+- Ramas: `main` + `feature/estructura-base`  
+- Issues creados  
+- HU documentadas con criterio de aceptación
 
-Supervisa la configuración del entorno (Node, MongoDB, .env).
+### ✔ 3.4 Historias de Usuario creadas  
+- Registrar hábito  
+- Editar hábito  
+- Eliminar hábito  
+- Marcar completado  
+- Ver resumen semanal
 
-💻 Desarrollador Backend – Miguel Ángel González
+---
 
-Desarrolla la API REST (modelos, controladores, rutas).
+# 🚀 4. Sprint 2 – Logros Principales
 
-Implementa la lógica CRUD y filtros.
+Este Sprint se enfocó en completar la API y construir una UI funcional que consuma todos los endpoints.
 
-Integra MongoDB usando Mongoose.
+---
 
-Prueba endpoints con Postman / Thunder Client.
+## 🎯 4.1 CRUD completo de hábitos (Backend)
 
-🎨 Desarrolladora Frontend / Tester – Zharit Feo
+### Endpoints implementados:
+- **POST** `/api/habitos` → Crear  
+- **GET** `/api/habitos` → Listar  
+- **GET** `/api/habitos/filtrar` → Alias para filtros  
+- **PUT** `/api/habitos/:id` → Actualizar  
+- **DELETE** `/api/habitos/:id` → Eliminar  
 
-Valida visualización correcta de endpoints en la UI.
+Incluye filtros por:  
+✔ categoría  
+✔ completado  
+✔ duración mínima y máxima  
+✔ paginación
 
-Prueba rutas, validaciones y estados del servidor.
+---
 
-Reporta errores o mejoras.
+## 🎯 4.2 Controlador avanzado con filtros + paginación  
+- Filtros dinámicos construidos por query params  
+- Ordenamiento por fecha  
+- Respuesta estructurada `{data, total, page, totalPages}`
 
-Verifica criterios de aceptación de cada HU.
+**Evidencia:**  
+![Filtros funcionando](./capturas/filtros-browser.png)
 
-🚀 4. Logros del Sprint 1 (Completados)
+---
 
-Este Sprint se centró en habilitar la base del proyecto para iniciar el CRUD.
+## 🎯 4.3 Carpeta `public/` y UI con Fetch API  
+Se implementó una interfaz web ligera que permite:
 
-✔ 4.1 Integración correcta de MongoDB
+- Crear hábitos  
+- Listar registros  
+- Filtrar  
+- Marcar como completado/pendiente  
+- Eliminar  
+- Recargar la lista  
 
-Conexión configurada con Mongoose.
+Todo mediante **JavaScript puro (Fetch API)**.
 
-Archivo .env funcional.
+**Evidencia UI:**  
+![Interfaz Web funcionando](./capturas/ui-principal.png)
 
-Prueba de conexión exitosa.
+---
 
-✔ 4.2 Creación del modelo inicial de hábitos
+## 🎯 4.4 Integración Frontend – Backend  
+`server.js` fue actualizado para servir archivos estáticos:
 
-Estructura del documento en MongoDB.
-
-Validaciones básicas.
-
-✔ 4.3 Inicialización y configuración del servidor Express
-
-express.json()
-
-cors()
-
-Ruta de prueba GET / funcionando.
-
-✔ 4.4 Repositorio GitHub operativo
-
-Ramas organizadas (main y ramas feature/).
-
-Issues creados.
-
-Colaboradores con permisos.
-
-✔ 4.5 Historias de Usuario estructuradas
-
-Incluyen descripción, criterios, escenarios y responsable.
-
-🚀 5. Logros del Sprint 2 (Completados)
-
-Este Sprint se centró en implementar la API completa, agregar filtros y paginación y construir una interfaz web funcional.
-
-🧩 5.1 CRUD completo de Hábitos (Backend)
-
-Se implementó el módulo completo con Express:
-
-✔ Crear hábito
-
-POST /api/habitos
-
-✔ Listar hábitos con filtros y paginación
-
-GET /api/habitos
-
-Filtros disponibles:
-
-categoria
-
-completado
-
-minDuracion
-
-maxDuracion
-
-page y limit
-
-✔ Ruta alias para filtrado (requisito del Sprint)
-
-GET /api/habitos/filtrar
-
-✔ Actualizar hábito
-
-PUT /api/habitos/:id
-Permite:
-
-editar título, descripción, categoría, duración
-
-marcar completado/pendiente
-
-✔ Eliminar hábito
-
-DELETE /api/habitos/:id
-
-🧩 5.2 Controlador avanzado con filtros + paginación
-
-El controlador incorpora:
-
-Construcción dinámica de filtros.
-
-Conversión de tipos desde query params.
-
-Paginación con skip y limit.
-
-Ordenamiento por fecha.
-
-Retorno de información estructurada:
-
-data
-
-total
-
-page
-
-totalPages
-
-limit
-
-Esto cumple exactamente con los puntos 3.1 a 3.3 del Sprint.
-
-🧩 5.3 Servir interfaz web desde Express (carpeta public/)
-
-Se añadió:
-
+```js
 app.use(express.static('public'));
-
-
-Esto permite acceder a la UI en:
-👉 http://localhost:3000/index.html
-
-🧩 5.4 Interfaz Web CRUD (HTML + JavaScript puro – Fetch API)
-
-La interfaz incluye:
-
-✔ Formulario para crear hábitos
-
-Campos: título, descripción, categoría, duración.
-
-✔ Filtros dinámicos
-
-Categoría
-
-Estado (completado/pendiente)
-
-Rango de duración
-
-✔ Listado dinámico
-
-Cada hábito muestra:
-
-título
-
-categoría
-
-duración
-
-estado con etiqueta
-
-botón completado/pendiente
-
-botón eliminar
-
-✔ Funcionalidades completas del CRUD desde la UI
-
-Crear
-
-Listar
-
-Filtrar
-
-Actualizar estado
-
-Eliminar
-
-Todo funcionando con Fetch API.
-
-🧩 5.5 Pruebas del Sprint
-✔ Pruebas en Postman / Thunder Client
-
-CRUD completo
-
-Filtros
-
-Paginación
-
-Validación de errores
-
-✔ Pruebas en MongoDB Compass
-
-Documentos insertados correctamente
-
-Actualizaciones reflejadas
-
-Eliminación funcionando
-
-✔ Pruebas en la consola del servidor
-
-Conexión exitosa
-
-Rutas reconocidas
-
-Sin errores de CORS o JSON
-
-✔ Pruebas en la interfaz web
-
-Render correcto
-
-Acciones activas (crear, listar, actualizar, eliminar)
-
-Filtros operacionales
-
-📚 6. Tecnologías utilizadas
-
-Node.js
-
-Express
-
-MongoDB + Mongoose
-
-JavaScript (ES6)
-
-HTML + CSS básico
-
-dotenv
-
-Postman / Thunder Client
-
-Git & GitHub
-
-🛠️ 7. Instalación y configuración
-7.1 Clonar repositorio
-git clone https://github.com/xmiguelxangelx/proyecto-nosql-equipo2.git
-cd proyecto-nosql-equipo2
-
-7.2 Instalar dependencias
-npm install
-
-7.3 Configurar variables de entorno
-
-Crear .env basado en .env.example:
-
-MONGO_URI=mongodb://127.0.0.1:27017/tracker_habitos
-PORT=3000
-
-7.4 Ejecutar servidor
-node server.js
-
-7.5 Abrir la interfaz web
-http://localhost:3000/index.html
-
-🎯 8. Conclusión del Sprint 2
-
-El equipo completó con éxito:
-
-✔ API REST con CRUD completo
-✔ Controlador con filtros avanzados
-✔ Paginación implementada correctamente
-✔ Interfaz web funcional conectada al backend
-✔ Botones de acción (completar/eliminar)
-✔ Pruebas en Postman, Compass y navegador
-✔ Uso correcto de variables de entorno
-✔ Publicación del Sprint en GitHub
-
-El proyecto está listo para avanzar al Sprint 3, donde se mejorará la experiencia de usuario, el diseño de la interfaz y se continuará afinando la lógica del sistema.
